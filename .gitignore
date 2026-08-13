@@ -1,0 +1,30 @@
+# Dependencies
+node_modules
+**/node_modules
+
+# Production & Build outputs
+dist
+**/dist
+build
+**/build
+output
+**/output
+
+# Database & Environment
+*.db
+*.db-journal
+*.sqlite
+.env
+.env.local
+**/.env
+
+# Antigravity & System
+.system_generated
+.brain
+*.log
+.DS_Store
+Thumbs.db
+
+# IDEs
+.vscode
+.idea

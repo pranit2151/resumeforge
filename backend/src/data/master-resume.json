@@ -1,0 +1,347 @@
+{
+  "contact": {
+    "name": "Pranit Patil",
+    "email": "pranitkashinathpatil@gmail.com",
+    "phone": "+91 8788413561",
+    "location": "Thane, Maharashtra, India",
+    "linkedin": "linkedin.com/in/pranit-patil",
+    "github": "github.com/pranit-patil"
+  },
+  "summary": "Full Stack Developer with 3+ years of experience delivering end-to-end web applications — building REST APIs and backend services in Node.js, Express.js, and SQL Server, and translating them into responsive UIs with Angular and React.js. Hands-on with WebSocket-based real-time features, microservices, and Docker containerization, with a proven track record in fintech delivering Payment Gateway, AEPS, and BBPS transaction workflows, authentication/authorization (JWT, RBAC), and performance-tuned database layers. Comfortable owning a feature from UI to database — code reviews, debugging, CI/CD pipelines (Jenkins, GitHub Actions, GitLab CI), and production support — with practical use of AI-assisted development tools such as GitHub Copilot.",
+  "modes": {
+    "backend-focused": {
+      "priorityTags": [
+        "backend",
+        "api",
+        "database",
+        "server",
+        "node",
+        "express",
+        "sql",
+        "microservices",
+        "security",
+        "fintech"
+      ],
+      "description": "Emphasizes backend systems, REST APIs, databases, fintech, and infrastructure work"
+    },
+    "fullstack-focused": {
+      "priorityTags": [
+        "fullstack",
+        "frontend",
+        "angular",
+        "react",
+        "backend",
+        "api",
+        "ui",
+        "node",
+        "typescript"
+      ],
+      "description": "Balances frontend and backend experience for fullstack roles"
+    }
+  },
+  "skills": {
+    "languages": [
+      "JavaScript",
+      "TypeScript",
+      "SQL",
+      "HTML5",
+      "CSS3",
+      "ReactJS",
+      "RDBMS",
+      "NoSQL",
+      "agile methodology",
+      "Kubernetes",
+      "ExpressJS",
+      "NodeJS",
+      "unit testing",
+      "Jenkins",
+      "cloud object stores"
+    ],
+    "frameworks": [
+      "Node.js",
+      "Express.js",
+      "Angular",
+      "React.js",
+      "RxJS",
+      "Reactive Forms",
+      "REST APIs",
+      "Microservices",
+      "WebSocket"
+    ],
+    "databases": [
+      "SQL Server",
+      "MySQL",
+      "PostgreSQL",
+      "Redis",
+      "Stored Procedures",
+      "Query Optimization"
+    ],
+    "cloud": [
+      "AWS (EC2, S3)",
+      "Docker",
+      "Jenkins",
+      "GitHub Actions",
+      "GitLab CI",
+      "CI/CD"
+    ],
+    "tools": [
+      "Git",
+      "GitHub",
+      "Postman",
+      "Swagger",
+      "VS Code",
+      "DBeaver",
+      "GitHub Copilot"
+    ],
+    "practices": [
+      "Code Review",
+      "Debugging",
+      "Performance Optimization",
+      "Agile/SDLC",
+      "RBAC",
+      "JWT Authentication",
+      "Backend Architecture & System Design"
+    ],
+    "domain": [
+      "Fintech",
+      "Payment Gateway",
+      "BBPS",
+      "AEPS",
+      "Transaction Processing & Reconciliation"
+    ]
+  },
+  "experience": [
+    {
+      "id": "exp-1",
+      "company": "SmartConnect Technologies Pvt. Ltd.",
+      "role": "Software Engineer",
+      "start": "Jan 2026",
+      "end": "Present",
+      "location": "India",
+      "bullets": [
+        {
+          "id": "b-1-1",
+          "text": "Built full-stack enterprise applications end-to-end: REST APIs in Node.js/Express.js with SQL Server on the backend, wired up to Angular front ends for reporting and workflow modules.",
+          "tags": [
+            "fullstack",
+            "backend",
+            "node",
+            "express",
+            "angular",
+            "api",
+            "sql"
+          ]
+        },
+        {
+          "id": "b-1-2",
+          "text": "Wrote and optimized SQL Server stored procedures and complex queries, improving backend response times significantly for high-volume enterprise data operations.",
+          "tags": [
+            "backend",
+            "database",
+            "sql",
+            "performance",
+            "server"
+          ]
+        },
+        {
+          "id": "b-1-3",
+          "text": "Implemented authentication, authorization, RBAC, audit logging, and report-masking features across both API and UI layers, ensuring compliance and data security.",
+          "tags": [
+            "backend",
+            "security",
+            "authentication",
+            "api",
+            "rbac"
+          ]
+        },
+        {
+          "id": "b-1-4",
+          "text": "Built approval workflows, RBAC controls, audit logging, and reporting modules for an Enterprise Workflow Management System, integrating Angular Reactive Forms with REST APIs end-to-end.",
+          "tags": [
+            "fullstack",
+            "angular",
+            "backend",
+            "api",
+            "ui",
+            "workflow"
+          ]
+        },
+        {
+          "id": "b-1-5",
+          "text": "Supported deployment pipeline and resolved production issues, ensuring high availability and stability of enterprise applications in live environments.",
+          "tags": [
+            "devops",
+            "backend",
+            "infrastructure",
+            "server"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "exp-2",
+      "company": "Smart InfoLogiks Pvt. Ltd.",
+      "role": "Software Developer",
+      "start": "Sep 2024",
+      "end": "Jan 2026",
+      "location": "India",
+      "bullets": [
+        {
+          "id": "b-2-1",
+          "text": "Developed secure backend applications using Node.js, Express.js, SQL Server, and REST APIs for fintech and enterprise clients, handling sensitive financial transaction data.",
+          "tags": [
+            "backend",
+            "node",
+            "express",
+            "api",
+            "fintech",
+            "security",
+            "sql"
+          ]
+        },
+        {
+          "id": "b-2-2",
+          "text": "Built payment transaction modules for Payment Gateway, BBPS, AEPS, and reconciliation workflows, processing high-volume financial transactions with accuracy and compliance.",
+          "tags": [
+            "fintech",
+            "backend",
+            "api",
+            "payment",
+            "transaction"
+          ]
+        },
+        {
+          "id": "b-2-3",
+          "text": "Delivered Payment Gateway, BBPS, AEPS transaction validation, reconciliation, and reporting modules with audit logging and real-time transaction monitoring for a Fintech Payment Platform.",
+          "tags": [
+            "fintech",
+            "backend",
+            "api",
+            "database",
+            "transaction",
+            "reporting"
+          ]
+        },
+        {
+          "id": "b-2-4",
+          "text": "Optimized SQL queries and stored procedures for high-throughput financial data processing; contributed to VAPT security compliance to meet regulatory standards.",
+          "tags": [
+            "backend",
+            "database",
+            "sql",
+            "performance",
+            "security",
+            "fintech"
+          ]
+        },
+        {
+          "id": "b-2-5",
+          "text": "Provided production support and incident resolution for live fintech systems, minimizing downtime for critical payment processing services.",
+          "tags": [
+            "backend",
+            "fintech",
+            "server",
+            "infrastructure"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "exp-3",
+      "company": "S Cube Technology Services Pvt. Ltd.",
+      "role": "Frontend Developer",
+      "start": "Feb 2023",
+      "end": "Jun 2024",
+      "location": "India",
+      "bullets": [
+        {
+          "id": "b-3-1",
+          "text": "Built responsive web applications in React.js, integrating REST APIs with backend services and building reusable UI component libraries for business applications.",
+          "tags": [
+            "frontend",
+            "react",
+            "ui",
+            "fullstack",
+            "api"
+          ]
+        },
+        {
+          "id": "b-3-2",
+          "text": "Migrated legacy JSP applications to a modern React-based architecture, improving maintainability and reducing technical debt significantly across core business modules.",
+          "tags": [
+            "frontend",
+            "react",
+            "ui",
+            "fullstack",
+            "migration"
+          ]
+        },
+        {
+          "id": "b-3-3",
+          "text": "Collaborated closely with backend developers to define API contracts and deliver end-to-end features, ensuring seamless integration between UI and server-side services.",
+          "tags": [
+            "fullstack",
+            "frontend",
+            "api",
+            "collaboration"
+          ]
+        }
+      ]
+    }
+  ],
+  "projects": [
+    {
+      "id": "proj-1",
+      "name": "FSSM — Faecal Sludge & Septage Management System",
+      "tech": [
+        "Node.js",
+        "SQL Server",
+        "REST APIs"
+      ],
+      "bullets": [
+        {
+          "id": "p-1-1",
+          "text": "Built backend APIs, reporting dashboards, and user-management modules for workflow automation, delivering a production-ready system with security enhancements.",
+          "tags": [
+            "backend",
+            "node",
+            "api",
+            "database",
+            "sql",
+            "reporting"
+          ]
+        },
+        {
+          "id": "p-1-2",
+          "text": "Implemented role-based access control and audit logging for a government-facing FSSM platform, ensuring data integrity and compliance with production-level security standards.",
+          "tags": [
+            "backend",
+            "security",
+            "rbac",
+            "api",
+            "node"
+          ]
+        }
+      ],
+      "tags": [
+        "backend",
+        "node",
+        "api",
+        "database"
+      ]
+    }
+  ],
+  "education": [
+    {
+      "id": "edu-1",
+      "degree": "Bachelor of Science in Information Technology",
+      "school": "University of Mumbai",
+      "year": "2023",
+      "gpa": "8.45",
+      "highlights": [
+        "CGPA: 8.45 / 10"
+      ]
+    }
+  ],
+  "certifications": []
+}
