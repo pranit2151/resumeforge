@@ -6,7 +6,8 @@
     "dev": "concurrently --names \"BACKEND,FRONTEND\" --prefix-colors \"cyan,magenta\" \"npm run dev --workspace=backend\" \"npm run dev --workspace=frontend\"",
     "install:all": "npm install && npm install --workspace=backend && npm install --workspace=frontend",
     "build": "npm run build --workspace=frontend && npm run build --workspace=backend",
-    "start": "node backend/dist/index.js"
+    "start": "node backend/dist/index.js",
+    "postinstall": "npx puppeteer browsers install chrome"
   },
   "workspaces": [
     "backend",
