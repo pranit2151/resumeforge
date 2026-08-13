@@ -13,6 +13,8 @@ output
 # Database & Environment
 *.db
 *.db-journal
+*.db-shm
+*.db-wal
 *.sqlite
 .env
 .env.local
