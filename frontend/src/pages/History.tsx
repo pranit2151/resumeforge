@@ -454,7 +454,7 @@ export default function HistoryPage() {
                                 Matched Keywords
                               </div>
                               <div className="keyword-list">
-                                {app.keywords_matched?.slice(0, 15).map((k) => (
+                                {app.keywords_matched?.slice(0, 15).map((k: string) => (
                                   <span key={k} className="badge badge-success">{k}</span>
                                 ))}
                               </div>
@@ -472,7 +472,7 @@ export default function HistoryPage() {
                                 Missing Keywords
                               </div>
                               <div className="keyword-list">
-                                {app.keywords_missing?.slice(0, 15).map((k) => (
+                                {app.keywords_missing?.slice(0, 15).map((k: string) => (
                                   <span key={k} className="badge badge-danger">{k}</span>
                                 ))}
                               </div>
