@@ -302,7 +302,7 @@ export default function Generate() {
                 </div>
 
                 <a
-                  href={downloadUrl(pdfFile)}
+                  href={`${downloadUrl(pdfFile)}${customFileName.trim() ? `?name=${encodeURIComponent(customFileName.trim())}` : ''}`}
                   className="btn btn-primary"
                   download={customFileName ? `${customFileName.trim()}.pdf` : true}
                   id="download-pdf-btn"
@@ -311,7 +311,7 @@ export default function Generate() {
                 </a>
                 {docxFile && (
                   <a
-                    href={downloadUrl(docxFile)}
+                    href={`${downloadUrl(docxFile)}${customFileName.trim() ? `?name=${encodeURIComponent(customFileName.trim())}` : ''}`}
                     className="btn btn-secondary"
                     download={customFileName ? `${customFileName.trim()}.docx` : true}
                     id="download-docx-btn"
