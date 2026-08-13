@@ -19,6 +19,8 @@ output
 .env
 .env.local
 **/.env
+.puppeteer-cache
+**/.puppeteer-cache
 
 # Antigravity & System
 .system_generated

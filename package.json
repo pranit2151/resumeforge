@@ -7,7 +7,7 @@
     "install:all": "npm install && npm install --workspace=backend && npm install --workspace=frontend",
     "build": "npm run build --workspace=frontend && npm run build --workspace=backend",
     "start": "node backend/dist/index.js",
-    "postinstall": "npx puppeteer browsers install chrome --path ./.puppeteer-cache"
+    "postinstall": "node -e \"const { execSync } = require('child_process'); const path = require('path'); const dir = path.resolve('./.puppeteer-cache'); execSync('npx puppeteer browsers install chrome --path ' + dir, { stdio: 'inherit' });\""
   },
   "workspaces": [
     "backend",
