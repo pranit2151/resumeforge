@@ -5,6 +5,52 @@ const api = axios.create({
   timeout: 120000, // 2 min for LLM + PDF generation
 });
 
+// Attach Authorization Bearer token to all requests across default axios & custom api instances
+const attachAuthInterceptors = (instance: typeof axios) => {
+  instance.interceptors.request.use((config) => {
+    const token = localStorage.getItem('accessToken');
+    if (token) {
+      config.headers.Authorization = `Bearer ${token}`;
+    }
+    return config;
+  });
+
+  instance.interceptors.response.use(
+    (response) => response,
+    async (error) => {
+      const originalRequest = error.config;
+      if (
+        error.response?.status === 401 &&
+        !originalRequest._retry &&
+        !originalRequest.url?.includes('/auth/login') &&
+        !originalRequest.url?.includes('/auth/register')
+      ) {
+        originalRequest._retry = true;
+        const refreshToken = localStorage.getItem('refreshToken');
+        if (refreshToken) {
+          try {
+            const res = await axios.post('/api/auth/refresh-token', { refreshToken });
+            const { accessToken, refreshToken: newRefreshToken } = res.data;
+            localStorage.setItem('accessToken', accessToken);
+            localStorage.setItem('refreshToken', newRefreshToken);
+            originalRequest.headers.Authorization = `Bearer ${accessToken}`;
+            return instance(originalRequest);
+          } catch (err) {
+            localStorage.removeItem('accessToken');
+            localStorage.removeItem('refreshToken');
+            localStorage.removeItem('authUser');
+            window.location.href = '/login';
+          }
+        }
+      }
+      return Promise.reject(error);
+    }
+  );
+};
+
+attachAuthInterceptors(axios);
+attachAuthInterceptors(api as any);
+
 export interface GenerateRequest {
   jd: string;
   mode: 'backend-focused' | 'fullstack-focused';

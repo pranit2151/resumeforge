@@ -86,6 +86,7 @@ router.post('/', async (req: Request, res: Response) => {
 
     // Step 6: Log to SQLite
     const appId = logApplication({
+      user_id: (req as any).user?.id,
       job_title: tailorResult.jobTitle,
       company: tailorResult.company,
       jd_text: jd,

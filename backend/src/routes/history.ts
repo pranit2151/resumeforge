@@ -7,9 +7,11 @@ const router = Router();
  * GET /api/history
  * Returns all past generated applications
  */
-router.get('/', (_req: Request, res: Response) => {
+router.get('/', (req: Request, res: Response) => {
   try {
-    const apps = getApplications(100);
+    const user = (req as any).user;
+    const userId = user && user.role !== 'admin' ? user.id : undefined;
+    const apps = getApplications(userId, 100);
     res.json({ applications: apps });
   } catch (err: any) {
     res.status(500).json({ error: err.message });

@@ -187,7 +187,7 @@ export async function renderWithPageControl(
       activeBullets.splice(lowestIndex, 1);
       iterations++;
     } finally {
-      await page.close();
+      await page.close().catch(() => {});
     }
   }
 
@@ -202,7 +202,7 @@ export async function renderWithPageControl(
     printBackground: false,
     margin: { top: '0.5in', right: '0.6in', bottom: '0.5in', left: '0.6in' },
   });
-  await page.close();
+  await page.close().catch(() => {});
 
   const fileName = generateFileName(company, role, 'pdf');
   const filePath = path.join(OUTPUT_DIR, fileName);
@@ -240,7 +240,7 @@ export async function reRenderPdf(
     fs.writeFileSync(filePath, pdfBuffer);
     return { pdfPath: filePath, pdfFileName: fileName };
   } finally {
-    await page.close();
+    await page.close().catch(() => {});
   }
 }
 
