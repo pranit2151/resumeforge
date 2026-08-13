@@ -48,10 +48,15 @@ function findChromeExecutable(): string | null {
     if (fs.existsSync(p)) return p;
   }
 
-  // Search Render & user cache paths
+  // Search project, Render & user cache paths
   const cacheDirs = [
+    path.join(process.cwd(), '.puppeteer-cache'),
+    path.join(__dirname, '../../.puppeteer-cache'),
+    path.join(__dirname, '../../../.puppeteer-cache'),
     '/opt/render/.cache/puppeteer',
+    '/opt/render/.cache',
     path.join(process.env.HOME || '', '.cache/puppeteer'),
+    path.join(process.env.HOME || '', '.cache'),
     path.join(process.cwd(), '.cache/puppeteer'),
   ];
 
