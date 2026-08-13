@@ -14,14 +14,75 @@ if (!fs.existsSync(OUTPUT_DIR)) {
 
 let browser: Browser | null = null;
 
+function searchForChrome(dir: string): string | null {
+  try {
+    const entries = fs.readdirSync(dir, { withFileTypes: true });
+    for (const entry of entries) {
+      const fullPath = path.join(dir, entry.name);
+      if (entry.isDirectory()) {
+        const result = searchForChrome(fullPath);
+        if (result) return result;
+      } else if (entry.isFile() && (entry.name === 'chrome' || entry.name === 'chrome.exe')) {
+        return fullPath;
+      }
+    }
+  } catch (e) {
+    // Ignore permissions or missing folder errors
+  }
+  return null;
+}
+
+function findChromeExecutable(): string | null {
+  if (process.env.PUPPETEER_EXECUTABLE_PATH && fs.existsSync(process.env.PUPPETEER_EXECUTABLE_PATH)) {
+    return process.env.PUPPETEER_EXECUTABLE_PATH;
+  }
+
+  // System binaries first
+  const systemPaths = [
+    '/usr/bin/google-chrome-stable',
+    '/usr/bin/google-chrome',
+    '/usr/bin/chromium-browser',
+    '/usr/bin/chromium',
+  ];
+  for (const p of systemPaths) {
+    if (fs.existsSync(p)) return p;
+  }
+
+  // Search Render & user cache paths
+  const cacheDirs = [
+    '/opt/render/.cache/puppeteer',
+    path.join(process.env.HOME || '', '.cache/puppeteer'),
+    path.join(process.cwd(), '.cache/puppeteer'),
+  ];
+
+  for (const cacheDir of cacheDirs) {
+    if (!fs.existsSync(cacheDir)) continue;
+    const found = searchForChrome(cacheDir);
+    if (found) return found;
+  }
+
+  return null;
+}
+
 async function getBrowser(): Promise<Browser> {
   if (!browser || !browser.connected) {
     const launchOptions: any = {
       headless: true,
-      args: ['--no-sandbox', '--disable-setuid-sandbox', '--disable-dev-shm-usage', '--single-process', '--no-zygote'],
+      args: [
+        '--no-sandbox',
+        '--disable-setuid-sandbox',
+        '--disable-dev-shm-usage',
+        '--single-process',
+        '--no-zygote',
+        '--disable-gpu',
+      ],
     };
-    if (process.env.PUPPETEER_EXECUTABLE_PATH) {
-      launchOptions.executablePath = process.env.PUPPETEER_EXECUTABLE_PATH;
+    const execPath = findChromeExecutable();
+    if (execPath) {
+      console.log(`[Puppeteer] Found Chrome executable: ${execPath}`);
+      launchOptions.executablePath = execPath;
+    } else {
+      console.log(`[Puppeteer] Using default Puppeteer executable resolution`);
     }
     browser = await puppeteer.launch(launchOptions);
   }

@@ -3,8 +3,9 @@ import type { MasterResume } from '../types';
 
 // Ordered fallback chain — models are tried in priority order.
 // On 429 (rate limit), 400 (decommissioned/invalid format), or JSON parse failure, next model is tried automatically.
+const rawModel = process.env.GROQ_MODEL ? process.env.GROQ_MODEL.replace(/^Ilama/i, 'llama') : 'llama-3.3-70b-versatile';
 const MODEL_FALLBACK_CHAIN = [
-  process.env.GROQ_MODEL || 'llama-3.3-70b-versatile',
+  rawModel,
   'llama-3.3-70b-versatile',
   'llama-3.1-8b-instant',
   'qwen/qwen3.6-27b',
